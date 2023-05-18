@@ -612,11 +612,6 @@ button, input, select, textarea {
 /**
  * Project - Post Item
  */
-.postItem__image img {
-  aspect-ratio: 1.3333333333;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
 .postItem__info {
   margin-top: var(--wp--custom--spacing--small, 0.75rem);
   margin-bottom: var(--wp--custom--spacing--x-small, 0.375rem);
@@ -631,16 +626,21 @@ button, input, select, textarea {
   margin-bottom: var(--wp--custom--spacing--x-small, 0.375rem);
 }
 .postItem.--single .postItem__image {
-  flex: 4 1 24rem;
+  flex: 4.5 1 27rem;
 }
 .postItem.--single .postItem__content {
-  flex: 5 1 30rem;
+  flex: 4.5 1 27rem;
   margin-bottom: var(--wp--custom--spacing--large, 3rem);
 }
 
 /**
  * Project - Post List
  */
+.postList .postItem__image img {
+  aspect-ratio: 1.3333333333;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .postList.--grid {
   display: flex;
   flex-wrap: wrap;

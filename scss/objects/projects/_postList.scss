@@ -3,6 +3,13 @@
  */
 
 .postList {
+  .postItem__image {
+    img {
+      aspect-ratio: 1 / $imgAspectRatio;
+      object-fit: cover;
+    }
+  }
+  
   &.--grid {
     @include row(space-around, flex-start);
 

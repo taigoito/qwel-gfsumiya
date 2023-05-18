@@ -3,13 +3,6 @@
  */
 
 .postItem {
-  &__image {
-    img {
-      aspect-ratio: 1 / $imgAspectRatio;
-      object-fit: cover;
-    }
-  }
-
   &__info {
     margin-top: space(2);
     margin-bottom: space(1);
@@ -29,11 +22,11 @@
   &.--single {
     .postItem {
       &__image {
-        @include col(4, true);
+        @include col(4.5, true);
       }
 
       &__content {
-        @include col(5, true);
+        @include col(4.5, true);
         margin-bottom: space(4);
       }
     }
