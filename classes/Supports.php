@@ -10,6 +10,14 @@ trait Supports {
 		// エディターにstyle.cssをセット
 		add_editor_style( 'style.css' );
 
+    // 抜粋文字数を設定
+    add_filter('excerpt_length', [ $this, 'register_excerpt_length' ], 999);
+
+  }
+
+  public function register_excerpt_length()
+  {
+    return 64;
   }
 
 }

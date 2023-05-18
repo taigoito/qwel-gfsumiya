@@ -11,7 +11,8 @@ $colorDefinitions: (
   primaryDark:       #00572d, // hsl(151, 100%, 17%)
   primary:           #239a0e, // hsl(111, 83%, 33%)
   primaryLight:      #b0d52a, // hsl(73, 67%, 50%)
-  secondary:         #a98047  // hsl(35, 41%, 47%)
+  secondary:         #a98047, // hsl(35, 41%, 47%)
+  secondaryLight:    #fbf6ce
 );
 
 $themeColors:      (
@@ -24,7 +25,8 @@ $themeColors:      (
   primaryDark:       var(--wp--preset--color--primary-dark, map-get($colorDefinitions, "primaryDark")),
   primary:           var(--wp--preset--color--primary, map-get($colorDefinitions, "primary")),
   primaryLight:      var(--wp--preset--color--primary-light, map-get($colorDefinitions, "primaryLight")),
-  secondary:         var(--wp--preset--color--secondary, map-get($colorDefinitions, "secondary"))
+  secondary:         var(--wp--preset--color--secondary, map-get($colorDefinitions, "secondary")),
+  secondaryLight:    var(--wp--preset--color--secondary-light, map-get($colorDefinitions, "secondaryLight"))
 );
 
 // 配色の配列から色指定を抽出する関数
@@ -53,7 +55,7 @@ $themeColors:      (
 
 // bodyの設定
 $bodyBg:           themeColor("lightest");
-$bodyColor:        themeColor("darkest");
+$bodyColor:        themeColor("darker");
 
 // リンク文字の設定
 // リンクを強調するため、_typography.scssにて、文字の装飾も設定すること

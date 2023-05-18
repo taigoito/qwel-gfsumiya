@@ -4,6 +4,10 @@
 
 $headerHeight: 6rem;
 
+:target {
+  scroll-margin-top: $headerHeight;
+}
+
 .header {
   height: $headerHeight;
 

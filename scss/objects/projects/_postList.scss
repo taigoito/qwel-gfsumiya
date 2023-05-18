@@ -4,7 +4,7 @@
 
 .postList {
   &.--grid {
-    @include row();
+    @include row(space-around, flex-start);
 
     .post {
       @include col(4, false, "md");
@@ -12,8 +12,24 @@
     }
 
     .postItem {
+      &__image {
+        .wp-block-post-featured-image {
+          margin-bottom: 0;
+        }
+      }
+
       &__heading {
         font-size: $h4FontSize;
+      }
+
+      &__content {
+        height: 18rem;
+        padding: space(3);
+        background-color: themeColor("lightest");
+      }
+
+      &__info {
+        margin-top: 0;
       }
 
       &__excerpt, &__more {

@@ -53,6 +53,11 @@
 					"slug": "secondary",
 					"name": "Secondary",
 					"color": "#a98047"
+				},
+				{
+					"slug": "secondary-light",
+					"name": "Secondary Light",
+					"color": "#fdfbea"
 				}
 			]
 		},
