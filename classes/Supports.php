@@ -1,5 +1,5 @@
 <?php
-namespace Qwel_Theme;
+namespace GFSumiya_Theme;
 
 trait Supports {
   // テーマサポート機能

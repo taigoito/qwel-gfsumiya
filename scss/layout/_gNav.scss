@@ -7,12 +7,35 @@
   height: 100%;
 
   &__siteBrand {
-    flex: 0 1 9rem;
+    flex: 0 1 18rem;
     margin: 0;
     line-height: 1;
   }
 
   &__primaryMenu {
+    .wp-block-navigation-item__content {
+      color: themeColor("primary");
+
+      &:hover {
+        color: themeColor("primaryLight");
+      }
+    }
+
+    .wp-block-navigation-item:last-child {
+      .wp-block-navigation-item__content {
+        padding: space(1) space(2);
+        border: 1px solid themeColor("primary");
+        border-radius: space(3);
+        text-decoration: none;
+
+        &:hover {
+          border-color: themeColor("primary");
+          background-color: themeColor("primary");
+          color: $bodyBg;
+        }
+      }
+    }
+
     @media (max-width: breakpoint("md") - 0.1) {
       display: none !important;
     }

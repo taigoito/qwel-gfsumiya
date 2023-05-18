@@ -35,24 +35,24 @@
 					"color": "#ffffff"
 				},
 				{
+					"slug": "primary-dark",
+					"name": "Primary Dark",
+					"color": "#00572d"
+				},
+				{
 					"slug": "primary",
 					"name": "Primary",
-					"color": "#3399cc"
+					"color": "#239a0e"
 				},
 				{
 					"slug": "primary-light",
 					"name": "Primary Light",
-					"color": "#85c2e0"
+					"color": "#b0d52a"
 				},
 				{
 					"slug": "secondary",
 					"name": "Secondary",
-					"color": "#cc334b"
-				},
-				{
-					"slug": "secondary-light",
-					"name": "Secondary Light",
-					"color": "#e08594"
+					"color": "#a98047"
 				}
 			]
 		},

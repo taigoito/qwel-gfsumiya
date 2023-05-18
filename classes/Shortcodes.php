@@ -1,5 +1,5 @@
 <?php
-namespace Qwel_Theme;
+namespace GFSumiya_Theme;
 
 trait Shortcodes {
   // ショートコード登録
@@ -14,8 +14,8 @@ trait Shortcodes {
     // デフォルト値
     $atts = shortcode_atts(
       [
-        'year' => '2022',
-        'text' => 'Qwel'
+        'year' => '2017',
+        'text' => '株式会社グリーンファーム角屋'
       ],
       $atts
     );

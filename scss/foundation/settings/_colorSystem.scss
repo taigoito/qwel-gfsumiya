@@ -8,10 +8,10 @@ $colorDefinitions: (
   light:             #b3b3b3, // 70%
   lighter:           #d9d9d9, // 85%
   lightest:          #ffffff, // 100%
-  primary:           #3399cc, // hsl(200, 60%, 50%)
-  primaryLight:      #85c2e0, // hsl(200, 60%, 70%)
-  secondary:         #cc334b, // hsl(350, 60%, 50%)
-  secondaryLight:    #e08594  // hsl(350, 60%, 70%)
+  primaryDark:       #00572d, // hsl(151, 100%, 17%)
+  primary:           #239a0e, // hsl(111, 83%, 33%)
+  primaryLight:      #b0d52a, // hsl(73, 67%, 50%)
+  secondary:         #a98047  // hsl(35, 41%, 47%)
 );
 
 $themeColors:      (
@@ -21,10 +21,10 @@ $themeColors:      (
   light:             var(--wp--preset--color--light, map-get($colorDefinitions, "light")),
   lighter:           var(--wp--preset--color--lighter, map-get($colorDefinitions, "lighter")),
   lightest:          var(--wp--preset--color--lightest, map-get($colorDefinitions, "lightest")),
+  primaryDark:       var(--wp--preset--color--primary-dark, map-get($colorDefinitions, "primaryDark")),
   primary:           var(--wp--preset--color--primary, map-get($colorDefinitions, "primary")),
   primaryLight:      var(--wp--preset--color--primary-light, map-get($colorDefinitions, "primaryLight")),
-  secondary:         var(--wp--preset--color--secondary, map-get($colorDefinitions, "secondary")),
-  secondaryLight:    var(--wp--preset--color--secondary-light, map-get($colorDefinitions, "secondaryLight")),
+  secondary:         var(--wp--preset--color--secondary, map-get($colorDefinitions, "secondary"))
 );
 
 // 配色の配列から色指定を抽出する関数
@@ -57,5 +57,5 @@ $bodyColor:        themeColor("darkest");
 
 // リンク文字の設定
 // リンクを強調するため、_typography.scssにて、文字の装飾も設定すること
-$linkColor:        themeColor("darker");
-$linkHoverColor:   themeColor("primary");
+$linkColor:        themeColor("primary");
+$linkHoverColor:   themeColor("primaryLight");
