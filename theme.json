@@ -230,12 +230,16 @@
 			"title": "Section Hero"
 		},
 		{
+			"name": "section-news",
+			"title": "Section News"
+		},
+		{
 			"name": "section-about",
 			"title": "Section About"
 		},
 		{
-			"name": "section-news",
-			"title": "Section News"
+			"name": "section-products",
+			"title": "Section Products"
 		},
 		{
 			"name": "section-access",
