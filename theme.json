@@ -242,6 +242,10 @@
 			"title": "Section Products"
 		},
 		{
+			"name": "section-story",
+			"title": "Section Story"
+		},
+		{
 			"name": "section-access",
 			"title": "Section Access"
 		},
