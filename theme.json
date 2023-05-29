@@ -246,6 +246,10 @@
 			"title": "Section Story"
 		},
 		{
+			"name": "section-columns",
+			"title": "Section Columns"
+		},
+		{
 			"name": "section-access",
 			"title": "Section Access"
 		},
