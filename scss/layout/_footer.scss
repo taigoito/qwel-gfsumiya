@@ -4,11 +4,19 @@
 
 .footer {
   &__inner {
-    padding: space(5);
+    padding: space(5) $gutter;
     text-align: center;
   }
   
   &__container {
     @extend %__containerLg;
+  }
+
+  &__content {
+    border-right: 2px solid themeColor("lightest");
+
+    @media (min-width: breakpoint("sm")) {
+      border-color: themeColor("lighter");
+    }
   }
 }
