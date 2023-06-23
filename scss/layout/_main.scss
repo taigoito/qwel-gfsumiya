@@ -3,6 +3,8 @@
  */
 
 .main {
+  margin-top: $headerHeight;
+  
   &__container {
     @extend %__containerLg;
   }

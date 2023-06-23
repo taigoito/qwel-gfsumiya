@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*
 Theme Name: GF Sumiya
 Description: This is a theme for Green Farm Sumiya.
@@ -32,8 +31,8 @@ body {
   margin: 0;
   background-color: var(--wp--preset--color--lightest, #ffffff);
   color: var(--wp--preset--color--darker, #4d4d4d);
-  font-family: "游ゴシック", "Yu Gothic", sans-serif;
-  font-weight: 500;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 400;
   line-height: var(--wp--custom--line-height--large, 1.8);
   letter-spacing: 0;
   -webkit-text-size-adjust: 100%;
@@ -42,8 +41,8 @@ body {
 h1, h2, h3, h4, h5, h6 {
   margin-top: var(--wp--custom--spacing--medium, 1.5rem);
   margin-bottom: var(--wp--custom--spacing--small, 0.75rem);
-  font-family: "游ゴシック", "Yu Gothic", sans-serif;
-  font-weight: 500;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 400;
 }
 
 h1 {
@@ -290,6 +289,11 @@ button, input, select, textarea {
 }
 
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
   height: 6rem;
 }
 .header__inner {
@@ -347,6 +351,9 @@ button, input, select, textarea {
 /**
  * Layout - Main
  */
+.main {
+  margin-top: 6rem;
+}
 .main__content {
   flex: 6 1 36rem;
 }
