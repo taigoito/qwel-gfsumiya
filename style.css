@@ -363,6 +363,17 @@ button, input, select, textarea {
   }
 }
 
+/*
+ * Layout - Sidebar
+ */
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+.sidebar ul li {
+  margin-bottom: var(--wp--custom--spacing--x-small, 0.375rem);
+}
+
 /**
  * Layout - Footer
  */
