@@ -1,0 +1,25 @@
+/*
+ * Project - Media Text
+ */
+
+.mediaText {
+  @media (min-width: breakpoint("md")) {
+    display: flex;
+    align-items: center;
+
+    &__text, &__media {
+      flex: 1 1 36rem;
+      padding: 1.5rem;
+    }
+
+    &:nth-of-type(even) {
+      .mediaText__text {
+        order: 1;
+      }
+
+      .mediaText__media {
+        order: 0;
+      }
+    }
+  }
+}

@@ -810,6 +810,26 @@ button, input, select, textarea {
   opacity: 0.7;
 }
 
+/*
+ * Project - Media Text
+ */
+@media (min-width: 900px) {
+  .mediaText {
+    display: flex;
+    align-items: center;
+  }
+  .mediaText__text, .mediaText__media {
+    flex: 1 1 36rem;
+    padding: 1.5rem;
+  }
+  .mediaText:nth-of-type(even) .mediaText__text {
+    order: 1;
+  }
+  .mediaText:nth-of-type(even) .mediaText__media {
+    order: 0;
+  }
+}
+
 /**
  * Utility - Flex
  */
