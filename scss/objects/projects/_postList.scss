@@ -14,25 +14,14 @@
     @include row(space-around, flex-start);
 
     .post {
-      @include col(4, false, "md");
+      @include col(2, false, "xs");
+      @include col(3, false, "md");
       margin-bottom: space(3);
     }
 
     .postItem {
-      &__image {
-        .wp-block-post-featured-image {
-          margin-bottom: 0;
-        }
-      }
-
       &__heading {
         font-size: $h4FontSize;
-      }
-
-      &__content {
-        height: 18rem;
-        padding: space(3);
-        background-color: themeColor("lightest");
       }
 
       &__info {
@@ -53,6 +42,7 @@
     @include row(space-around, flex-start);
 
     .post {
+      @include col(2, false, "xs");
       @include col(3, false, "md");
       margin-bottom: space(3);
       padding-left: 0.75rem;
@@ -61,10 +51,32 @@
 
     .postItem {
       &__image {
+        figure {
+          margin: 0 auto;
+        }
+
         img {
           @media (min-width: breakpoint("md")) {
             aspect-ratio: 1;
           }
+        }
+      }
+
+      &__content {
+        height: 10.5rem;
+        padding: space(2) space(3);
+        background-color: themeColor("lightest");
+        
+        @media (min-width: breakpoint("md")) {
+          height: 18rem;
+        }
+      }
+
+      &__excerpt {
+        display: none;
+
+        @media (min-width: breakpoint("md")) {
+          display: block;
         }
       }
     }

@@ -271,8 +271,8 @@ button, input, select, textarea {
 }
 
 .--flexItem_12, .--flexItem_11, .--flexItem_10, .--flexItem_9, .--flexItem_8, .--flexItem_7, .--flexItem_6, .--flexItem_5, .--flexItem_4, .--flexItem_3, .--flexItem_2, .postList.--list .postItem__content, .postList.--list .postItem__image, .postList.--columns .post, .postList.--grid .post, .postItem.--single .postItem__content, .postItem.--single .postItem__image, .main__sidebar, .main__content {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 
 .section__container, .titleArea__container, .footer__container, .main__container, .header__container {
@@ -701,23 +701,16 @@ button, input, select, textarea {
   align-items: flex-start;
 }
 .postList.--grid .post {
+  flex: 0 1 12rem;
   margin-bottom: var(--wp--custom--spacing--medium, 1.5rem);
 }
 @media (min-width: 900px) {
   .postList.--grid .post {
-    flex: 0 1 24rem;
+    flex: 0 1 18rem;
   }
-}
-.postList.--grid .postItem__image .wp-block-post-featured-image {
-  margin-bottom: 0;
 }
 .postList.--grid .postItem__heading {
   font-size: var(--wp--custom--font-size--medium, 1.17rem);
-}
-.postList.--grid .postItem__content {
-  height: 18rem;
-  padding: var(--wp--custom--spacing--medium, 1.5rem);
-  background-color: var(--wp--preset--color--lightest, #ffffff);
 }
 .postList.--grid .postItem__info {
   margin-top: 0;
@@ -737,6 +730,7 @@ button, input, select, textarea {
   align-items: flex-start;
 }
 .postList.--columns .post {
+  flex: 0 1 12rem;
   margin-bottom: var(--wp--custom--spacing--medium, 1.5rem);
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -746,9 +740,30 @@ button, input, select, textarea {
     flex: 0 1 18rem;
   }
 }
+.postList.--columns .postItem__image figure {
+  margin: 0 auto;
+}
 @media (min-width: 900px) {
   .postList.--columns .postItem__image img {
     aspect-ratio: 1;
+  }
+}
+.postList.--columns .postItem__content {
+  height: 10.5rem;
+  padding: var(--wp--custom--spacing--small, 0.75rem) var(--wp--custom--spacing--medium, 1.5rem);
+  background-color: var(--wp--preset--color--lightest, #ffffff);
+}
+@media (min-width: 900px) {
+  .postList.--columns .postItem__content {
+    height: 18rem;
+  }
+}
+.postList.--columns .postItem__excerpt {
+  display: none;
+}
+@media (min-width: 900px) {
+  .postList.--columns .postItem__excerpt {
+    display: block;
   }
 }
 .postList.--list .post {
