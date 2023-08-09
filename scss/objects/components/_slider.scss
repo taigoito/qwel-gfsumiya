@@ -1,0 +1,193 @@
+/**
+ * Slider
+ */
+
+// Settings
+$sliderAspectRatio:    1 / 2 !default;
+$sliderHeights:        (
+  sm:                    15rem,
+  md:                    22.5rem,
+  lg:                    30rem
+) !default;
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: calc(125vmin * #{$sliderAspectRatio});
+  //height: calc(83.33vmin * #{$sliderAspectRatio});
+  overflow: hidden;
+
+  @media (min-width: breakpoint("lg")) {
+    @each $key, $height in $sliderHeights {
+      &.--#{$key} {
+        height: $height;
+      }
+    }
+  }
+  
+  // .slider直下にギャラリー(style:Slider Items)を設置して使用する
+  .is-style-slider-items {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    transform: translateX(0);
+
+    .wp-block-image {
+      position: relative;
+      flex: 0 1 auto;
+      order: 0;
+      margin: 0;
+      opacity: 1;
+      transition: opacity 0.15s linear;
+      
+      &:not(.--current) {
+        opacity: .5;
+      }
+
+      img {
+        width: 125vmin;
+        //width: 83.33vmin;
+        aspect-ratio: 1 / $sliderAspectRatio;
+        object-fit: cover;
+        margin: 0;
+  
+        @media (min-width: breakpoint("lg")) {
+          @each $key, $height in $sliderHeights {
+            @at-root .slider.--#{$key} .slider__item img {
+              width: auto;
+              height: $height;
+            }
+          }
+        }
+      }
+
+      .wp-element-caption {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: 0;
+        padding: space(2) 30% space(2) 15%;
+        background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.7));
+        color: themeColor("lightest");
+        text-align: left;
+        line-height: 1.5;
+
+        h3 {
+          display: inline-block;
+          margin-bottom: space(2);
+          padding-bottom: space(1);
+          font-size: $h4FontSize;
+
+          @media (min-width: 900px) {
+            font-size: $h2FontSize;
+          }
+        }
+
+        p {
+          font-size: $h6FontSize;
+
+          @media (min-width: 900px) {
+            font-size: $h4FontSize;
+          }
+        }
+
+        a {
+          position: absolute;
+          right: 15%;
+          bottom: space(3);
+          display: block;
+          width: 4.5rem;
+          height: 4.5rem;
+          //width: 3rem;
+          //height: 3rem;
+          margin: auto;
+          //padding: 0.375rem;
+          //border-radius: 50%;
+          //background-color: themeColor("primary")Dark;
+
+          @media (min-width: 900px) {
+            width: 6rem;
+            height: 6rem;
+            //width: 4.5rem;
+            //height: 4.5rem;
+            //padding: 0.5625rem;
+          }
+
+          &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url(./assets/readMore.svg) no-repeat center center;
+            //width: 2.25rem;
+            //height: 2.25rem;
+            //background: url(./assets/arrow.svg) no-repeat center center;
+
+            @media (min-width: 900px) {
+              //width: 3.375rem;
+              //height: 3.375rem;
+            }
+          }
+
+          &:hover {
+            opacity: 0.85;
+          }
+        }
+      }
+    }
+  }
+
+  &__prev, &__next {
+    display: none;
+
+    @media (min-width: breakpoint("lg")) {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      display: block;
+      height: 4.5rem; // アイコンのサイズ
+      margin: auto;
+      border: 0;
+      background-color: transparent;
+      color: themeColor("primaryLight");
+      text-align: center;
+      
+      &:hover {
+        color: themeColor("primary");
+      }
+    }
+  }
+
+  &__prev {
+    left: 0;
+  }
+
+  &__next {
+    right: 0;
+  }
+  
+  &__nav {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    height: 1rem;
+    margin: space(3) auto;
+    padding: 0;
+  }
+
+  &__navItem {
+    width: .5rem;
+    height: .5rem;
+    margin: space(2);
+    border-radius: 50%;
+    background-color: themeColor("primary");
+    cursor: pointer;
+
+    &:not(.--current) {
+      background-color: themeColor("primaryLight");
+    }
+  }
+}
