@@ -824,14 +824,6 @@ button, input, select, textarea {
   opacity: 0.7;
 }
 
-/*
- * Has Background
- */
-.has-secondary-light-background-color {
-  background: url("./assets/texture.svg");
-  background-size: 180px;
-}
-
 /**
  * Project - Link
  */
