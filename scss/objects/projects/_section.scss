@@ -4,7 +4,28 @@
 
 .section {
   &__inner {
-    background-color: $bodyBg;
+    &.has-background {
+      position: relative;
+
+      &::before, &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        width: 100%;
+        height: 15vw;
+        background: url("./assets/curve.svg") no-repeat center center / cover scroll;
+      }
+
+      &::before {
+        top: -7.5vw;
+      }
+
+      &::after {
+        bottom: -7.5vw;
+      }
+    }
   }
   
   &__container {
