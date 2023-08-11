@@ -3,18 +3,17 @@
  */
 
 // Settings
-$sliderAspectRatio:    1 / 2 !default;
+$sliderAspectRatio:    5 / 8 !default;
 $sliderHeights:        (
-  sm:                    15rem,
-  md:                    22.5rem,
-  lg:                    30rem
+  sm:                    12rem,
+  md:                    18rem,
+  lg:                    24rem
 ) !default;
 
 .slider {
   position: relative;
   width: 100%;
-  height: calc(125vmin * #{$sliderAspectRatio});
-  //height: calc(83.33vmin * #{$sliderAspectRatio});
+  height: min(calc(100vmin * #{$sliderAspectRatio}), 27rem);
   overflow: hidden;
 
   @media (min-width: breakpoint("lg")) {
@@ -47,11 +46,18 @@ $sliderHeights:        (
       }
 
       img {
-        width: 125vmin;
-        //width: 83.33vmin;
+        mask-image: url("./assets/mask_00.svg");
+        mask-repeat: no-repeat;
+        mask-position: 50% 50%;
+        mask-size: contain;
+        width: min(100vmin, calc(27rem / #{$sliderAspectRatio}));
         aspect-ratio: 1 / $sliderAspectRatio;
-        object-fit: cover;
+        object-fit: contain;
         margin: 0;
+
+        &:where(.wp-block-image:nth-of-type(even) *) {
+          mask-image: url("./assets/mask_01.svg");
+        }
   
         @media (min-width: breakpoint("lg")) {
           @each $key, $height in $sliderHeights {
@@ -63,77 +69,84 @@ $sliderHeights:        (
         }
       }
 
-      .wp-element-caption {
+      &::before {
+        content: url("./assets/figure_00.svg");
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        z-index: 1;
+        width: clamp(5rem, 10vw, 7.5rem);
+      }
+
+      &::after {
+        content: url("./assets/figure_01.svg");
+        position: absolute;
+        right: 1.5rem;
+        bottom: 0;
+        z-index: 1;
+        width: clamp(3rem, 6vw, 4.5rem);
+      }
+
+      figcaption::after {
+        content: url("./assets/figure_02.svg");
         position: absolute;
         left: 0;
-        right: 0;
         bottom: 0;
+        z-index: 1;
+        width: clamp(5rem, 10vw, 7.5rem);
+      }
+
+      .wp-element-caption {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
         margin: 0;
-        padding: space(2) 30% space(2) 15%;
-        background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.7));
-        color: themeColor("lightest");
+        padding-left: 0.75rem;
+        color: themeColor("darkest");
         text-align: left;
-        line-height: 1.5;
+        line-height: 1.8;
+        text-shadow: 3px 2px 6px white;
 
         h3 {
           display: inline-block;
-          margin-bottom: space(2);
+          margin: space(2) 0;
           padding-bottom: space(1);
           font-size: $h4FontSize;
 
-          @media (min-width: 900px) {
-            font-size: $h2FontSize;
+          @media (min-width: breakpoint("md")) {
+            margin-top: space(3);
+            font-size: $h3FontSize;
           }
         }
 
         p {
           font-size: $h6FontSize;
 
-          @media (min-width: 900px) {
-            font-size: $h4FontSize;
+          @media (min-width: breakpoint("md")) {
+            font-size: $h5FontSize;
           }
         }
 
         a {
-          position: absolute;
-          right: 15%;
-          bottom: space(3);
-          display: block;
-          width: 4.5rem;
-          height: 4.5rem;
-          //width: 3rem;
-          //height: 3rem;
-          margin: auto;
-          //padding: 0.375rem;
-          //border-radius: 50%;
-          //background-color: themeColor("primary")Dark;
-
-          @media (min-width: 900px) {
-            width: 6rem;
-            height: 6rem;
-            //width: 4.5rem;
-            //height: 4.5rem;
-            //padding: 0.5625rem;
-          }
-
           &::after {
             content: "";
             position: absolute;
-            width: 100%;
-            height: 100%;
+            width: 7.5rem;
+            height: 1.875rem;
+            margin: space(2) 0 0 space(3);
             background: url(./assets/readMore.svg) no-repeat center center;
-            //width: 2.25rem;
-            //height: 2.25rem;
-            //background: url(./assets/arrow.svg) no-repeat center center;
+            opacity: 0.85;
 
-            @media (min-width: 900px) {
-              //width: 3.375rem;
-              //height: 3.375rem;
+            @media (min-width: breakpoint("md")) {
+              width: 9rem;
+              height: 2.25rem;
             }
           }
 
-          &:hover {
-            opacity: 0.85;
+          &:hover::after {
+            opacity: 1;
           }
         }
       }
