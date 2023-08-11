@@ -871,6 +871,44 @@ button, input, select, textarea {
   text-transform: uppercase;
 }
 
+.about__image {
+  position: relative;
+  overflow: auto;
+}
+.about__image::after {
+  content: url("./assets/figure_03.svg");
+  position: absolute;
+  top: -1.5rem;
+  right: -0.75rem;
+  width: 7.5rem;
+}
+
+.products__image {
+  position: relative;
+  overflow: auto;
+}
+.products__image.--num_1::after {
+  content: url("./assets/figure_04.svg");
+  position: absolute;
+  top: -1.5rem;
+  left: -0.75rem;
+  width: 4.5rem;
+}
+.products__image.--num_2::after {
+  content: url("./assets/figure_01.svg");
+  position: absolute;
+  top: -1.5rem;
+  right: -0.75rem;
+  width: 4.5rem;
+}
+.products__image.--num_3::after {
+  content: url("./assets/figure_05.svg");
+  position: absolute;
+  top: -1.5rem;
+  left: -0.75rem;
+  width: 4.5rem;
+}
+
 /**
  * Project - Post Item
  */

@@ -48,6 +48,51 @@
       line-height: 2;
       text-transform: uppercase;
     }
+  }
+}
 
+.about {
+  &__image {
+    position: relative;
+    overflow: auto;
+
+    &::after {
+      content: url("./assets/figure_03.svg");
+      position: absolute;
+      top: -1.5rem;
+      right: -0.75rem;
+      width: 7.5rem;
+    }
+  }
+}
+
+.products {
+  &__image {
+    position: relative;
+    overflow: auto;
+
+    &.--num_1::after {
+      content: url("./assets/figure_04.svg");
+      position: absolute;
+      top: -1.5rem;
+      left: -0.75rem;
+      width: 4.5rem;
+    }
+
+    &.--num_2::after {
+      content: url("./assets/figure_01.svg");
+      position: absolute;
+      top: -1.5rem;
+      right: -0.75rem;
+      width: 4.5rem;
+    }
+
+    &.--num_3::after {
+      content: url("./assets/figure_05.svg");
+      position: absolute;
+      top: -1.5rem;
+      left: -0.75rem;
+      width: 4.5rem;
+    }
   }
 }
