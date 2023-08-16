@@ -45,6 +45,35 @@ $sliderHeights:        (
         opacity: .5;
       }
 
+      &.--current { 
+        &::before {
+          content: url("./assets/figure_00.svg");
+          position: absolute;
+          top: 1.5rem;
+          right: 1.5rem;
+          z-index: 1;
+          width: clamp(5rem, 10vw, 7.5rem);
+        }
+
+        &::after {
+          content: url("./assets/figure_01.svg");
+          position: absolute;
+          right: 1.5rem;
+          bottom: 0;
+          z-index: 1;
+          width: clamp(3rem, 6vw, 4.5rem);
+        }
+
+        figcaption::after {
+          content: url("./assets/figure_02.svg");
+          position: absolute;
+          left: 0.375rem;
+          bottom: 0;
+          z-index: 1;
+          width: clamp(5rem, 10vw, 7.5rem);
+        }
+      }
+
       img {
         mask-image: url("./assets/mask_00.svg");
         mask-repeat: no-repeat;
@@ -69,33 +98,6 @@ $sliderHeights:        (
         }
       }
 
-      &::before {
-        content: url("./assets/figure_00.svg");
-        position: absolute;
-        top: 1.5rem;
-        right: 1.5rem;
-        z-index: 1;
-        width: clamp(5rem, 10vw, 7.5rem);
-      }
-
-      &::after {
-        content: url("./assets/figure_01.svg");
-        position: absolute;
-        right: 1.5rem;
-        bottom: 0;
-        z-index: 1;
-        width: clamp(3rem, 6vw, 4.5rem);
-      }
-
-      figcaption::after {
-        content: url("./assets/figure_02.svg");
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        z-index: 1;
-        width: clamp(5rem, 10vw, 7.5rem);
-      }
-
       .wp-element-caption {
         position: absolute;
         top: 0;
@@ -107,7 +109,7 @@ $sliderHeights:        (
         color: themeColor("darkest");
         text-align: left;
         line-height: 1.8;
-        text-shadow: 3px 2px 6px white;
+        text-shadow: 0 0 3px white;
 
         h3 {
           display: inline-block;
@@ -137,7 +139,7 @@ $sliderHeights:        (
             height: 1.875rem;
             margin: space(2) 0 0 space(3);
             background: url(./assets/readMore.svg) no-repeat center center;
-            opacity: 0.85;
+            opacity: 1;
 
             @media (min-width: breakpoint("md")) {
               width: 9rem;
@@ -146,7 +148,7 @@ $sliderHeights:        (
           }
 
           &:hover::after {
-            opacity: 1;
+            opacity: 0.85;
           }
         }
       }
