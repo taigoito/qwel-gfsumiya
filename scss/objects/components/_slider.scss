@@ -152,6 +152,12 @@ $sliderHeights:        (
           }
         }
       }
+
+      &:nth-of-type(4n+3) {
+        .wp-element-caption {
+          text-shadow: 3px 3px 6px white, -3px -3px 6px white;
+        }
+      }
     }
   }
 

@@ -786,6 +786,9 @@ button, input, select, textarea {
 .slider .is-style-slider-items .wp-block-image .wp-element-caption a:hover::after {
   opacity: 0.85;
 }
+.slider .is-style-slider-items .wp-block-image:nth-of-type(4n+3) .wp-element-caption {
+  text-shadow: 3px 3px 6px white, -3px -3px 6px white;
+}
 .slider__prev, .slider__next {
   display: none;
 }
