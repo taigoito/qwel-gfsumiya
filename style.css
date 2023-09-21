@@ -774,7 +774,7 @@ button, input, select, textarea {
   width: 7.5rem;
   height: 1.875rem;
   margin: var(--wp--custom--spacing--small, 0.75rem) 0 0 var(--wp--custom--spacing--medium, 1.5rem);
-  background: url(./assets/readMore.svg) no-repeat center center;
+  background: url(./assets/readmore.svg) no-repeat center center;
   opacity: 1;
 }
 @media (min-width: 900px) {
