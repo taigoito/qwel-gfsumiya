@@ -4,4 +4,8 @@
 
 .table {
   @include table();
+
+  td:first-child {
+    width: 6rem;
+  }
 }
